@@ -1,0 +1,11 @@
+{
+  "name": "tickle",
+  "version": "0.0.0",
+  "description": "Playing with Johny-5",
+  "main": "hello.js",
+  "author": "Lea Albaugh",
+  "license": "none",
+  "dependencies": {
+    "johnny-five": "~0.7.15"
+  }
+}
