@@ -1,0 +1,53 @@
+/*Palette: http://www.colourlovers.com/palette/806955/[slow_motion]*/
+$cream: #f8eddb;
+$orange: #f7803c; 
+$dark: #3e122f;
+$light: lighten($dark,50%);
+$background: #643931;
+
+$desktop-wrap-width:70%;
+$mobile-wrap-width:90%;
+
+body {
+	/*background: url($backgroundURL) $background repeat;*/
+	font-family: 'Bitter', serif;
+}
+
+
+@mixin centerElementAtWidth($wrap-width) {
+	position: absolute;
+	left: (100% - $wrap-width)/2;
+	right: (100% - $wrap-width)/2;
+
+}
+
+@mixin roundcorner($radius, $corner: "top-left") {
+    -moz-border-#{$corner}-radius:    $radius ; // firefox
+    -webkit-border-#{$corner}-radius: $radius;  // safari/chrome
+    border-#{$corner}-radius:         $radius;  // CSS3, works in IE9
+}
+
+#copyright {
+	background-color: white;
+	font-size: 12px;
+	font-style: italic;
+	position: absolute;
+	right: -20px;
+	bottom: 28px;
+
+	padding: 5px 5px 0px 5px;
+	/*top right bottom left*/
+
+	display:block;
+
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);	
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+	@include roundcorner(10px, "top-right");
+
+	a {
+		color: $light;
+		text-decoration: none;
+	}
+}

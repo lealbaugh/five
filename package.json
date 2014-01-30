@@ -6,6 +6,8 @@
   "author": "Lea Albaugh",
   "license": "none",
   "dependencies": {
-    "johnny-five": "~0.7.15"
+    "johnny-five": "~0.7.15",
+    "express": "~3.4.8",
+    "socket.io": "~0.9.16"
   }
 }
