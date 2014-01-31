@@ -7,7 +7,7 @@ var jfive = require("johnny-five"),
 board.on("ready", function() {
   // Create an Led on pin 13 and strobe it on/off
   // Optionally set the speed; defaults to 100ms
-  led = new jfive.Led({board: this, pin: 13});
+  led = new jfive.Led({board: this, pin: 11});
   led.off();
   console.log("led ready!");
 });
@@ -41,6 +41,9 @@ io.sockets.on('connection', function(socket){
 	socket.on('click', function(event){
 		switchLed();
 	});
+	socket.on('moved', function(quantity){
+		turnLed(quantity);
+	});
 });
 
 function switchLed() {
@@ -49,6 +52,15 @@ function switchLed() {
 	 }
 	 else {
 		led.toggle();
+	 }
+}
+
+function turnLed(quantity) {
+	if(typeof led === 'undefined'){
+	   console.log("no led yet!");
+	 }
+	 else {
+		led.brightness(quantity);
 	 }
 }
 
